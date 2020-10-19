@@ -1,20 +1,30 @@
 <template>
-  <button class="jen-button" :class="{[`jen-theme-${theme}`]: theme}">
+  <button class="jen-button" :class="classList">
     <slot />
   </button>
 </template>
 
 <script>
+import { computed } from 'vue'
+
 export default {
-  inheritAttrs: false,
   props: {
     theme: {
       type: String,
       default: 'button'
+    },
+    size: {
+      type: String,
+      default: 'normal'
     }
   },
   setup(props, context) {
-
+    const { size, theme } = props
+    const classList = computed(() => ({
+      [`jen-theme-${theme}`]: theme,
+      [`jen-size-${size}`]: size
+    }))
+    return { classList }
   }
 }
 </script>
@@ -68,6 +78,16 @@ $radius: 4px;
     &:hover,&:focus{
       background: darken(white, 5%);;
     }
+  }
+  &.jen-size-big{
+    font-size:24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.jen-size-small{
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>

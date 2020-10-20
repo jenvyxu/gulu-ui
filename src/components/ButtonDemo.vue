@@ -1,5 +1,5 @@
 <template>
-  <h1>按钮主题</h1>
+  <h1>示例1</h1>
   <div>
     <Button>你好</Button>
     <Button theme="button">你好</Button>
@@ -9,11 +9,29 @@
     <Button theme="link">link button</Button>
     <Button theme="text">text button</Button>
   </div>
-  <h1>按钮大小</h1>
+  <h1>示例2</h1>
   <div>
     <Button size="small">小按钮</Button>
     <Button>普通按钮</Button>
     <Button size="big">大按钮</Button>
+  </div>
+  <h1>示例3</h1>
+  <div>
+    <div>
+      <Button level="main">主要按钮</Button>
+      <Button>普通按钮</Button>
+      <Button level="danger">危险按钮</Button>
+    </div>
+    <div>
+      <Button theme="link" level="main">主要链接按钮</Button>
+      <Button theme="link">普通链接按钮</Button>
+      <Button theme="link" level="danger">危险链接按钮</Button>
+    </div>
+    <div>
+      <Button theme="text" level="main">主要文字按钮</Button>
+      <Button theme="text">普通文字按钮</Button>
+      <Button theme="text" level="danger">危险文字按钮</Button>
+    </div>
   </div>
 </template>
 

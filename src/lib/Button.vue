@@ -1,5 +1,6 @@
 <template>
   <button class="jen-button" :class="classList" :disabled="disabled">
+    <span v-if="loading" class="jen-loadingIndicator"></span>
     <slot />
   </button>
 </template>
@@ -22,6 +23,10 @@ export default {
       default: 'normal'
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
       type: Boolean,
       default: false
     }
@@ -168,6 +173,25 @@ $grey: grey;
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
+    }
+  }
+  > .jen-loadingIndicator {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    border-radius: 50%;
+    border-color: $blue $blue $blue transparent;
+    border-width: 2px;
+    border-style: solid;
+    animation: jen-spin 1s infinite linear;
+  }
+  @keyframes jen-spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
     }
   }
 }

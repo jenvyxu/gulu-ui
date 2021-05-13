@@ -17,7 +17,7 @@
   </div>
 </template>
 <script lang="ts">
-import { computed, onMounted, onUpdated, ref, watchEffect } from 'vue'
+import { computed, onMounted, ref, watchEffect } from 'vue'
 import Tab from './Tab.vue'
 export default {
   props: {
@@ -56,7 +56,7 @@ export default {
         indicator.value.style.left = left + 'px'  
       })      
     })
-    
+
     return {
       defaults,
       titles,

@@ -12,7 +12,7 @@
         <div class="jen-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="jen-tabs-content">
-      <component :is="current" :key="selected"/>
+      <component :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>

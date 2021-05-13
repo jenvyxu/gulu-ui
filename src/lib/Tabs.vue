@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="jen-tabs-content">
-      <component :is="current" />
+      <component :is="current" :key="selected"/>
     </div>
   </div>
 </template>

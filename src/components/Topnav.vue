@@ -1,22 +1,29 @@
 <template>
   <div class="topnav">
-    <div class="logo">
+    <router-link class="logo" to="/">
       <svg class="icon">
         <use xlink:href="#icon-diamond"></use>
       </svg>
       JEN UI
-    </div>
+    </router-link>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li><router-link to="/doc">文档</router-link></li>
     </ul>
-    <span class="toggleAside" @click="toggleMenu"></span>
+    <svg class="toggleAside icon" @click="toggleMenu" v-if="toggleMenuButtonVisible">
+      <use xlink:href="#icon-menu"></use>
+    </svg>
   </div>
 </template>
 
 <script lang="ts">
 import { inject, Ref } from 'vue'
 export default {
+  props: {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
   setup() {
     const menuVisible = inject<Ref<boolean>>('menuvisible')
     const toggleMenu = () => {
@@ -65,11 +72,11 @@ $color: #007974;
     display: none;
     width: 24px;
     height: 24px;
-    background-color: red;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
   }
   @media (max-width: 500px) {
     >.menu {

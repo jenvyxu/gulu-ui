@@ -3,21 +3,33 @@
         <Topnav class="nav" toggleMenuButtonVisible />
         <div class="content">
             <aside v-if="menuVisible">
-                <h2>组件列表</h2>
-                <ol>
-                    <li>
-                    <router-link to="/doc/switch">Switch 组件</router-link>
-                    </li>
-                    <li>
-                    <router-link to="/doc/button">Button 组件</router-link>
-                    </li>
-                    <li>
-                    <router-link to="/doc/dialog">Dialog 组件</router-link>
-                    </li>
-                    <li>
-                    <router-link to="/doc/tabs">Tabs 组件</router-link>
-                    </li>
-                </ol>
+              <h2>文档</h2>
+              <ol>
+                <li>
+                  <router-link to="/doc/intro">介绍</router-link>
+                </li>
+                <li>
+                  <router-link to="/doc/install">安装</router-link>
+                </li>
+                <li>
+                  <router-link to="/doc/get-started">开始使用</router-link>
+                </li>
+              </ol>
+              <h2>组件列表</h2>
+              <ol>
+                <li>
+                <router-link to="/doc/switch">Switch 组件</router-link>
+                </li>
+                <li>
+                <router-link to="/doc/button">Button 组件</router-link>
+                </li>
+                <li>
+                <router-link to="/doc/dialog">Dialog 组件</router-link>
+                </li>
+                <li>
+                <router-link to="/doc/tabs">Tabs 组件</router-link>
+                </li>
+              </ol>
             </aside>
                 <main>
                   <router-view />
@@ -74,14 +86,23 @@ aside {
   left: 0;
   width: 150px;
   height: 100%;  
-  padding: 70px 16px 16px 16px;
+  padding: 70px 0 16px 0;
   background: lightblue;
   > h2 {
     margin-bottom: 4px;
+    padding: 0 16px;
   }
   > ol {
     > li {
-      padding: 4px 0;
+      > a {
+        display: block;
+        padding: 4px 16px;
+        text-decoration: none;
+        &.router-link-active{
+          background: #fff;
+        }        
+      }
+
     }
   }
 }

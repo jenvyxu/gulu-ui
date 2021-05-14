@@ -111,12 +111,6 @@ $color: #007974;
       }
     }
   }
-
-
-
-
-
-
   & >svg {
     width: 64px;
     height: 64px;

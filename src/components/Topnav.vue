@@ -1,6 +1,11 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-diamond"></use>
+      </svg>
+      JEN UI
+    </div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -25,6 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color: #007974;
 .topnav {
   position: fixed;
   top: 0;
@@ -35,9 +41,17 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 16px;
+  color: $color;
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    display: flex;
+    align-items: center;
+    >svg {
+      margin-right: 6px;
+      width: 28px;
+      height: 28px;
+    }
   }
   > .menu {
     display: flex;

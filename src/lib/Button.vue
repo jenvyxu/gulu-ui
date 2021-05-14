@@ -177,8 +177,8 @@ $grey: grey;
   }
   > .jen-loadingIndicator {
     display: inline-block;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
     margin-right: 4px;
     border-radius: 50%;
     border-color: $blue $blue $blue transparent;

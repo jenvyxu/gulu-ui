@@ -1,7 +1,7 @@
 {
   "name": "jen-ui",
-  "version": "0.0.1",
-  "main": "dist/lib/jen.js",
+  "version": "0.0.3",
+  "main": "dist/lib/jen-ui.js",
   "files": [
     "dist/lib/*"
   ],

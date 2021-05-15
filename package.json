@@ -5,7 +5,7 @@
   "files": [
     "dist/lib/*"
   ],
-  "module": "dist/lib/jen.esm.js",
+  "module": "dist/lib/jen-ui.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"

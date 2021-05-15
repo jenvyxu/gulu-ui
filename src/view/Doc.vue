@@ -1,39 +1,39 @@
 <template>
     <div class="layout">
         <Topnav class="nav" toggleMenuButtonVisible />
-        <div class="content">
-            <aside v-if="menuVisible">
-              <h2>文档</h2>
-              <ol>
-                <li>
-                  <router-link to="/doc/intro">介绍</router-link>
-                </li>
-                <li>
-                  <router-link to="/doc/install">安装</router-link>
-                </li>
-                <li>
-                  <router-link to="/doc/get-started">开始使用</router-link>
-                </li>
-              </ol>
-              <h2>组件列表</h2>
-              <ol>
-                <li>
-                <router-link to="/doc/switch">Switch 组件</router-link>
-                </li>
-                <li>
-                <router-link to="/doc/button">Button 组件</router-link>
-                </li>
-                <li>
-                <router-link to="/doc/dialog">Dialog 组件</router-link>
-                </li>
-                <li>
-                <router-link to="/doc/tabs">Tabs 组件</router-link>
-                </li>
-              </ol>
-            </aside>
-                <main>
-                  <router-view />
-                </main>
+        <div class="content" @click="hideAside">
+          <aside v-if="menuVisible">
+            <h2>文档</h2>
+            <ol>
+              <li>
+                <router-link to="/doc/intro">介绍</router-link>
+              </li>
+              <li>
+                <router-link to="/doc/install">安装</router-link>
+              </li>
+              <li>
+                <router-link to="/doc/get-started">开始使用</router-link>
+              </li>
+            </ol>
+            <h2>组件列表</h2>
+            <ol>
+              <li>
+              <router-link to="/doc/switch">Switch 组件</router-link>
+              </li>
+              <li>
+              <router-link to="/doc/button">Button 组件</router-link>
+              </li>
+              <li>
+              <router-link to="/doc/dialog">Dialog 组件</router-link>
+              </li>
+              <li>
+              <router-link to="/doc/tabs">Tabs 组件</router-link>
+              </li>
+            </ol>
+          </aside>
+          <main>
+            <router-view />
+          </main>
         </div>
     </div>
 </template>
@@ -47,7 +47,10 @@ export default {
     },
   setup() {
     const menuVisible = inject<Ref<boolean>>('menuvisible')
-    return { menuVisible }
+    const hideAside = () => {
+      menuVisible.value = false
+    }
+    return { menuVisible, hideAside }
   }
 }
 </script>
@@ -82,7 +85,7 @@ export default {
 }
 aside {
   position: fixed;
-  z-index: 2;
+  z-index: 11;
   top: 0;
   left: 0;
   width: 150px;

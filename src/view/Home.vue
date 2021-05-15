@@ -3,9 +3,9 @@
     <Topnav />
     <div class="banner">
       <h1>JEN UI</h1>
-      <h2>a beautiful ui</h2>
+      <h2>一个简单易用的Vue3组件库</h2>
       <div class="actions">
-        <a href="https://github.com/jenvyxu">Github</a>
+        <a href="https://github.com/jenvyxu/jen-ui">Github</a>
         <router-link to="/doc">开始</router-link>
       </div>
     </div>

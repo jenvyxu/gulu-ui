@@ -7,7 +7,7 @@
       JEN UI
     </router-link>
     <ul class="menu">
-      <li><router-link to="/doc">文档</router-link></li>
+      <li><router-link to="/doc/intro">文档</router-link></li>
     </ul>
     <svg class="toggleAside icon" @click="toggleMenu" v-if="toggleMenuButtonVisible">
       <use xlink:href="#icon-menu"></use>

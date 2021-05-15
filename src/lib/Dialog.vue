@@ -3,10 +3,11 @@
     <div class="jen-dialog-overlay" @click="onClickOverlay"></div>
     <div class="jen-dialog-wrapper">
       <div class="jen-dialog">
-        <header>标题<span class="jen-dialog-close" @click="close"></span></header>
+        <header>
+          <slot name="title" />
+          <span class="jen-dialog-close" @click="close"></span></header>
         <main>
-          <p>第一</p>
-          <p>第二行</p>
+          <slot name="content" />
         </main>
         <footer>
           <Button level="main" @click="ok">Ok</Button>
@@ -34,6 +35,10 @@ export default {
     },
     cancel: {
       type: Function
+    },
+    title: {
+      type: String,
+      default: '标题'
     }
   },
   components: {

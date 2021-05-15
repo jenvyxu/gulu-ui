@@ -11,8 +11,11 @@ import GetStarted from './view/GetStarted.vue'
 import Install from './view/Install.vue'
 import { h } from '@vue/runtime-core'
 import Markdown from './components/Markdown.vue'
+import intro from './markdown/intro.md'
+import getStarted from './markdown/get-started.md'
+import install from './markdown/install.md'
 
-const md = filename => h(Markdown, { path: `../markdown/${filename}.md`, key: filename })
+const md = string => h(Markdown, { content: string, key: string })
 
 const history = createWebHashHistory()
 export const router = createRouter({
@@ -21,9 +24,9 @@ export const router = createRouter({
         { path: '/', component: Home },
         { path: '/doc', component: Doc, children: [
             { path: '', component: DocDemo },
-            { path: 'intro', component: md('intro') },
-            { path: 'get-started', component: md('get-started') },
-            { path: 'install', component: md('install') },
+            { path: 'intro', component: md(intro) },
+            { path: 'get-started', component: md(getStarted) },
+            { path: 'install', component: md(install) },
             { path: 'switch', component: SwitchDemo },
             { path: 'button', component: ButtonDemo },
             { path: 'dialog', component: DialogDemo },

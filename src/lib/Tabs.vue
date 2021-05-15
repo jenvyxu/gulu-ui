@@ -31,7 +31,8 @@ export default {
     const titles = defaults.map((tag) => tag.props.title)
     // 检查内部子组件是否为Tab组件
     defaults.forEach((tag) => {
-      if(tag.type !== Tab) {
+      // @ts-ignore
+      if(tag.type.name !== Tab.name) {
         throw new Error('Tabs子标签必须是Tab')
       }
     })

@@ -55,7 +55,7 @@ export default {
         const { left: left2 } = container.value.getBoundingClientRect()
         const left = left1 - left2
         indicator.value.style.left = left + 'px'  
-      })      
+      }, { flush: 'post' })
     })
 
     return {

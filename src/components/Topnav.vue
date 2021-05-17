@@ -49,6 +49,7 @@ $color: #007974;
   align-items: center;
   padding: 16px;
   color: $color;
+  background: #fff;
   > .logo {
     max-width: 6em;
     margin-right: auto;

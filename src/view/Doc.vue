@@ -48,7 +48,9 @@ export default {
   setup() {
     const menuVisible = inject<Ref<boolean>>('menuvisible')
     const hideAside = () => {
-      menuVisible.value = false
+      if(window.innerWidth < 800) {
+        menuVisible.value = false
+      }
     }
     return { menuVisible, hideAside }
   }
